@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rF8-gI-gjC">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ScrollViewExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="fillEqually" spacing="64" translatesAutoresizingMaskIntoConstraints="NO" id="Rcq-UC-b9e">
+                                <rect key="frame" x="60" y="60" width="294" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Mb-zT-9FU">
+                                        <rect key="frame" x="0.0" y="0.0" width="115" height="30"/>
+                                        <state key="normal" title="Slayt Mode Start"/>
+                                        <connections>
+                                            <action selector="slaytModeStartButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Srs-eL-2th"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Db-s9-xp8">
+                                        <rect key="frame" x="179" y="0.0" width="115" height="30"/>
+                                        <state key="normal" title="Slayt Mode End"/>
+                                        <connections>
+                                            <action selector="slaytModeEndButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xuX-VI-i9d"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="6" translatesAutoresizingMaskIntoConstraints="NO" id="797-Nm-61v">
+                                <rect key="frame" x="118.66666666666669" y="671.66666666666663" width="177" height="27.333333333333371"/>
+                                <color key="pageIndicatorTintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="currentPageIndicatorTintColor" systemColor="labelColor"/>
+                            </pageControl>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gyf-hb-QQG">
+                                <rect key="frame" x="0.0" y="86" width="414" height="650"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="2fS-WS-sdu"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="8Ns-Dq-3u4"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="w1Y-Vz-uTP"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gyf-hb-QQG" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="4J4-Qf-SkW"/>
+                            <constraint firstItem="797-Nm-61v" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TDB-5H-feT"/>
+                            <constraint firstItem="gyf-hb-QQG" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="W0S-Fc-2B4"/>
+                            <constraint firstItem="gyf-hb-QQG" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="cWM-Cy-KQw"/>
+                            <constraint firstItem="gyf-hb-QQG" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="jHb-Ld-fPr"/>
+                            <constraint firstItem="797-Nm-61v" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="moY-V2-JEC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="797-Nm-61v" secondAttribute="bottom" constant="37" id="r94-qn-6JT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pageController" destination="797-Nm-61v" id="Qa1-MA-dMa"/>
+                        <outlet property="scrollView" destination="gyf-hb-QQG" id="qFu-6G-qi3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="531.8840579710145" y="75.815217391304358"/>
+        </scene>
+        <!--Scroll View Controller-->
+        <scene sceneID="fD1-TE-Ru7">
+            <objects>
+                <viewController id="rF8-gI-gjC" customClass="ScrollViewController" customModule="ScrollViewExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jKw-gS-RFJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="FqM-jF-8ut">
+                                <rect key="frame" x="127.66666666666669" y="671.66666666666663" width="159" height="27.333333333333371"/>
+                                <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="currentPageIndicatorTintColor" systemColor="labelColor"/>
+                            </pageControl>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="go6-Vh-lV3"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <constraints>
+                            <constraint firstItem="FqM-jF-8ut" firstAttribute="centerX" secondItem="jKw-gS-RFJ" secondAttribute="centerX" id="EbJ-Ls-BDX"/>
+                            <constraint firstItem="go6-Vh-lV3" firstAttribute="bottom" secondItem="FqM-jF-8ut" secondAttribute="bottom" constant="37" id="buF-ws-O8k"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pageControl" destination="FqM-jF-8ut" id="FOa-nn-U4z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4iN-cy-B3b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1663" y="105"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
